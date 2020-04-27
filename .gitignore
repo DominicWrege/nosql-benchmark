@@ -1,0 +1,6 @@
+db-data
+db-data2
+init
+*.DS_Store
+.idea
+bin

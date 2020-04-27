@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mariadbee:
+    image: mariadb:latest
+    volumes:
+      - ./db-data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    restart: always
+  phpmyadmin:
+    depends_on:
+      - mariadbee
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8090:80
+    env_file:
+      phpadmin.env

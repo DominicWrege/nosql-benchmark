@@ -1,0 +1,7 @@
+version: "3"
+services:
+    monetdb:
+        image: monetdb/monetdb-r-docker
+        ports:
+            - 50000:50000
+        restart: always
