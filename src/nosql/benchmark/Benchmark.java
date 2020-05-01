@@ -12,12 +12,12 @@ public class Benchmark {
 	int N=1000;
 
 	public static void main(String args[]) {
-		System.out.println("duoaduaidasipdhiaship");
-//		System.out.println("N=1000");
+		System.out.println("N=1000");
 		System.out.println("running mysql");
-		new Benchmark("jdbc:mysql://localhost:3306/test", "root", "mysql").start();
-//		System.out.println("running monetdb");
-//		new Benchmark("jdbc:monetdb://@localhost:50000/db", "monetdb", "monetdb").start();
+
+		new Benchmark("jdbc:mysql://172.22.160.87:3306/test", "root", "mysql").start();
+		System.out.println("running monetdb");
+		new Benchmark("jdbc:monetdb://172.22.160.87:50000/db", "monetdb", "monetdb").start();
 
 	}
 	public Benchmark(String url, String usr, String pwd) {
